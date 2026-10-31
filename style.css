@@ -235,7 +235,7 @@ h1 {
   right: 12px;
   width: 34px;
   height: 34px;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.80);
   border-radius: 50%;
   cursor: pointer;
   z-index: 1020;
