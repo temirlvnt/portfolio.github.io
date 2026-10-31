@@ -20,7 +20,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 0 5%;
-  overflow: hidden; /* Обязательно, чтобы градиент не вылезал за рамки */
+  overflow: hidden;
 }
 
 .hero-bg {
@@ -30,11 +30,10 @@ body {
   transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Кадрирует видео так, чтобы оно заполняло экран без искажения пропорций */
+  object-fit: cover;
   z-index: 1;
 }
 
-/* Градиентный оверлей: темнее сзади текста и плавно уходит в цвет фона (#0a0a0a) книзу */
 .hero-overlay {
   position: absolute;
   top: 0;
@@ -114,194 +113,7 @@ h1 {
   gap: 2.5rem;
 }
 
-.project-card {
-  cursor: pointer;
-}
-
-.video-container {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border-radius: 16px;
-  overflow: hidden;
-  background-color: #1a1a1a;
-  margin-bottom: 1rem;
-}
-
-.video-container video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.project-card:hover video {
-  transform: scale(1.04);
-}
-
-.project-info h3 {
-  font-size: 1.3rem;
-  margin-bottom: 0.3rem;
-}
-
-.project-info p {
-  color: #888;
-  font-size: 0.9rem;
-}
-
-/* FOOTER */
-.footer {
-  padding: 8rem 5%;
-  text-align: center;
-  border-top: 1px solid #1f1f1f;
-}
-
-.footer h2 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.footer p {
-  color: #888;
-  margin-bottom: 2.5rem;
-}
-
-.socials a {
-  color: #fff;
-  text-decoration: none;
-  margin: 0 1.5rem;
-  font-size: 1.2rem;
-  transition: color 0.3s ease;
-}
-
-.socials a:hover {
-  color: #888;
-}
-
-/* ==========================================
-   АДАПТИВ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ (до 768px)
-   ========================================== */
-@media (max-width: 768px) {
-  html, body {
-    overflow-x: hidden;
-    width: 100%;
-  }
-  
-  /* Настройка самой hero-секции для мобилки */
-  .hero {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: flex-end; /* Прижимаем контент к низу, как в сторис или тизерах */
-    justify-content: center;
-    padding: 40px 20px;
-    overflow: hidden;
-    background-color: #0a0a0a;
-  }
-
-  /* Видео заполняет весь экран, никаких черных полос по бокам */
-  .hero-bg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Заливает весь экран без пустых полей */
-    z-index: 1;
-  }
-
-  /* Густой кинематографичный градиент: сверху легкое затемнение, снизу глубокая чернота для текста */
-  .hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      to bottom, 
-      rgba(10, 10, 10, 0.3) 0%, 
-      rgba(10, 10, 10, 0.7) 50%, 
-      rgba(10, 10, 10, 0.95) 85%, 
-      #0a0a0a 100%
-    );
-    z-index: 2;
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 3;
-    width: 100%;
-    max-width: 100%;
-    text-align: left;
-    padding-bottom: 20px; /* Отступ снизу для красоты */
-  }
-
-  .subtitle {
-    font-size: 0.75rem;
-    letter-spacing: 1.5px;
-    margin-bottom: 0.75rem;
-    color: #b0b0b0;
-  }
-
-  h1 {
-    font-size: 1.8rem;
-    line-height: 1.25;
-    margin-bottom: 1.5rem;
-    word-wrap: break-word;
-  }
-
-  .hero-btns {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    width: 100%;
-  }
-
-  .btn {
-    display: block;
-    width: 100%;
-    text-align: center;
-    margin-right: 0;
-    padding: 0.85rem 1.2rem;
-    font-size: 0.95rem;
-  }
-
-  /* Настройка сетки проектов для мобилок */
-  .projects {
-    padding: 4rem 20px;
-  }
-
-  .grid {
-    grid-template-columns: 1fr; /* Строго одна колонка */
-    gap: 2rem;
-  }
-
-  .section-title {
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
-  }
-
-  /* Подвал */
-  .footer {
-    padding: 4rem 20px;
-  }
-
-  .footer h2 {
-    font-size: 1.8rem;
-  }
-
-  .socials {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .socials a {
-    margin: 0;
-  }
-
-  /* Стили для карточек проектов */
+/* Стили для карточек проектов */
 .project-card {
   cursor: pointer;
 }
@@ -356,7 +168,7 @@ h1 {
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
-  padding-left: 3px; /* Центрируем иконку play */
+  padding-left: 3px;
   box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
@@ -370,9 +182,19 @@ h1 {
   background: #151515;
 }
 
+.project-info h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.3rem;
+}
+
+.project-info p {
+  color: #888;
+  font-size: 0.9rem;
+}
+
 /* МОДАЛЬНОЕ ОКНО ДЛЯ ПРОСМОТРА ВИДЕО */
 .modal {
-  display: none; /* Обязательно скрыто по умолчанию! */
+  display: none;
   position: fixed;
   z-index: 1000;
   left: 0;
@@ -396,7 +218,6 @@ h1 {
   overflow: hidden;
 }
 
-/* Строго фиксируем iframe внутри модалки, чтобы он не улетал */
 .modal-content iframe {
   position: absolute;
   top: 0;
@@ -421,3 +242,151 @@ h1 {
 .close-btn:hover {
   color: #888;
 }
+
+/* FOOTER */
+.footer {
+  padding: 8rem 5%;
+  text-align: center;
+  border-top: 1px solid #1f1f1f;
+}
+
+.footer h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.footer p {
+  color: #888;
+  margin-bottom: 2.5rem;
+}
+
+.socials a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 1.5rem;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.socials a:hover {
+  color: #888;
+}
+
+/* ==========================================
+   АДАПТИВ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ (до 768px)
+   ========================================== */
+@media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 40px 20px;
+    overflow: hidden;
+    background-color: #0a0a0a;
+  }
+
+  .hero-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom, 
+      rgba(10, 10, 10, 0.3) 0%, 
+      rgba(10, 10, 10, 0.7) 50%, 
+      rgba(10, 10, 10, 0.95) 85%, 
+      #0a0a0a 100%
+    );
+    z-index: 2;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: 100%;
+    text-align: left;
+    padding-bottom: 20px;
+  }
+
+  .subtitle {
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.75rem;
+    color: #b0b0b0;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+    line-height: 1.25;
+    margin-bottom: 1.5rem;
+    word-wrap: break-word;
+  }
+
+  .hero-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-right: 0;
+    padding: 0.85rem 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .projects {
+    padding: 4rem 20px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .footer {
+    padding: 4rem 20px;
+  }
+
+  .footer h2 {
+    font-size: 1.8rem;
+  }
+
+  .socials {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .socials a {
+    margin: 0;
+  }
