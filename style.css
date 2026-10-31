@@ -231,13 +231,13 @@ h1 {
 /* Кнопка закрытия (крестик) в правом верхнем углу модального окна */
 .close-btn {
   position: absolute;
-  top: 10px;      /* Смещаем чуть выше рамки видео, как на твоем красном круге */
+  top: 20px;      /* Смещаем чуть выше рамки видео, как на твоем красном круге */
   right: 10px;    /* Смещаем правее рамки видео */
   width: 32px;
   height: 32px;
   background: rgba(255, 255, 255, 0.9); /* Делаем круг полностью белым или полупрозрачным */
   color: #000;      /* Черный крестик для контраста */
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   font-weight: 400;
   display: flex;
   align-items: center;
@@ -245,7 +245,7 @@ h1 {
   border-radius: 50%;
   cursor: pointer;
   z-index: 1020;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease;
   
   /* Дополнительные свойства для идеального центрирования иконки крестика */
