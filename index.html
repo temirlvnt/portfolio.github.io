@@ -71,6 +71,20 @@
           <p>Directing / Color Grading</p>
         </div>
       </div>
+       <!-- Project Item: Instagram Reel -->
+      <div class="project-card" onclick="openInstagramModal('https://www.instagram.com/reel/DYVWLSEtu5m/embed/')">
+        <div class="video-container">
+          <!-- Сюда можешь поставить превью-картинку (скриншот из видео) -->
+          <img src="preview_reel.jpg" alt="temirlvnt reel" class="project-thumb">
+          <div class="play-overlay">
+            <div class="play-btn">▶</div>
+          </div>
+        </div>
+        <div class="project-info">
+          <h3>Instagram Reel</h3>
+          <p>Reels / Vertical Video / Direction</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -93,6 +107,14 @@
   </div>
 </div>
 
+  <!-- МОДАЛЬНОЕ ОКНО ДЛЯ INSTAGRAM -->
+<div id="instagramModal" class="modal" onclick="closeInstagramModal()">
+  <div class="modal-content insta-content" onclick="event.stopPropagation()">
+    <button class="close-btn" onclick="closeInstagramModal()"></button>
+    <iframe id="instaPlayer" src="" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+  </div>
+</div>
+
   <script>
     function openModal(url) {
       if (!url) return;
@@ -110,6 +132,22 @@
       modal.style.display = 'none';
       document.body.style.overflow = 'auto';
     }
+
+    function openInstagramModal(embedUrl) {
+    const modal = document.getElementById('instagramModal');
+    const player = document.getElementById('instaPlayer');
+    player.src = embedUrl;
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeInstagramModal() {
+    const modal = document.getElementById('instagramModal');
+    const player = document.getElementById('instaPlayer');
+    player.src = '';
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
   </script>
   
 </body>
