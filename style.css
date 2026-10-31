@@ -228,29 +228,42 @@ h1 {
   border: none;
 }
 
-/* Кнопка закрытия (крестик) в правом верхнем углу модального окна */
+/* Кнопка закрытия (крестик) — идеальный геометрический центр */
 .close-btn {
   position: absolute;
-  top: 20px;      /* Смещаем чуть выше рамки видео, как на твоем красном круге */
-  right: 10px;    /* Смещаем правее рамки видео */
-  width: 32px;
-  height: 32px;
-  background: rgba(255, 255, 255, 0.9); /* Делаем круг полностью белым или полупрозрачным */
-  color: #000;      /* Черный крестик для контраста */
-  font-size: 1.2rem;
-  font-weight: 400;
-  display: flex;
-  align-items: center;
-  justify-content: center; /* Центрирует крестик внутри круга по горизонтали */
+  top: 12px;
+  right: 12px;
+  width: 34px;
+  height: 34px;
+  background: rgba(255, 255, 255, 0.95);
   border-radius: 50%;
   cursor: pointer;
   z-index: 1020;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   transition: all 0.3s ease;
-  
-  /* Дополнительные свойства для идеального центрирования иконки крестика */
+  border: none;
   padding: 0;
-  line-height: 0; 
+}
+
+/* Рисуем сам крестик с помощью линий CSS для идеального центрирования */
+.close-btn::before,
+.close-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px; /* Длина линий крестика */
+  height: 2px; /* Толщина линий */
+  background-color: #000;
+  border-radius: 2px;
+}
+
+.close-btn::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.close-btn::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .close-btn:hover {
