@@ -181,40 +181,50 @@ h1 {
    АДАПТИВ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ (до 768px)
    ========================================== */
 @media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  
   /* Настройка самой hero-секции для мобилки */
   .hero {
     position: relative;
     width: 100%;
     height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: flex-end; /* Прижимаем контент к низу, как в сторис или тизерах */
     justify-content: center;
-    padding: 0 20px;
+    padding: 40px 20px;
     overflow: hidden;
-    background-color: #0a0a0a; /* Цвет фона подложки */
+    background-color: #0a0a0a;
   }
 
-  /* Делаем видео горизонтальным с помощью contain */
+  /* Видео заполняет весь экран, никаких черных полос по бокам */
   .hero-bg {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
-    height: auto; /* Автоматическая высота сохраняет горизонтальные пропорции 16:9 */
-    max-height: 100%;
-    object-fit: contain; /* Видео не обрезается по бокам */
+    height: 100%;
+    object-fit: cover; /* Заливает весь экран без пустых полей */
     z-index: 1;
   }
 
-  /* Легкий градиент, чтобы текст оставался читаемым поверх видео */
+  /* Густой кинематографичный градиент: сверху легкое затемнение, снизу глубокая чернота для текста */
   .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(10, 10, 10, 0.6);
+    background: linear-gradient(
+      to bottom, 
+      rgba(10, 10, 10, 0.3) 0%, 
+      rgba(10, 10, 10, 0.7) 50%, 
+      rgba(10, 10, 10, 0.95) 85%, 
+      #0a0a0a 100%
+    );
     z-index: 2;
   }
 
@@ -222,7 +232,9 @@ h1 {
     position: relative;
     z-index: 3;
     width: 100%;
+    max-width: 100%;
     text-align: left;
+    padding-bottom: 20px; /* Отступ снизу для красоты */
   }
 
   .subtitle {
