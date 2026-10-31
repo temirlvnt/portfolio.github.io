@@ -228,32 +228,34 @@ h1 {
   border: none;
 }
 
-/* Кнопка закрытия (крестик) внутри правого верхнего угла плеера */
+/* Кнопка закрытия (крестик) в правом верхнем углу модального окна */
 .close-btn {
   position: absolute;
-  top: 15px;
-  right: 15px;
-  width: 40px;
-  height: 40px;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(5px);
-  color: #fff;
+  top: -15px;      /* Смещаем чуть выше рамки видео, как на твоем красном круге */
+  right: -15px;    /* Смещаем правее рамки видео */
+  width: 45px;
+  height: 45px;
+  background: rgba(255, 255, 255, 0.9); /* Делаем круг полностью белым или полупрозрачным */
+  color: #000;      /* Черный крестик для контраста */
   font-size: 1.8rem;
-  font-weight: 300;
+  font-weight: 400;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; /* Центрирует крестик внутри круга по горизонтали */
   border-radius: 50%;
   cursor: pointer;
   z-index: 1020;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease;
-  line-height: 1;
+  
+  /* Дополнительные свойства для идеального центрирования иконки крестика */
+  padding: 0;
+  line-height: 0; 
 }
 
 .close-btn:hover {
-  background: rgba(255, 255, 255, 0.9);
-  color: #000;
-  transform: scale(1.05);
+  background: #ffffff;
+  transform: scale(1.1);
 }
 
 /* FOOTER */
