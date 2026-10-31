@@ -168,3 +168,91 @@ h1 {
 .socials a:hover {
   color: #888;
 }
+/* ==========================================
+   АДАПТИВ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ (до 768px)
+   ========================================== */
+@media (max-width: 768px) {
+  /* Фиксируем горизонтальный скролл */
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* Настройки Hero-секции */
+  .hero {
+    padding: 0 20px; /* Добавляем безопасные отступы по бокам */
+    justify-content: center;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  /* Уменьшаем размер подзаголовка */
+  .subtitle {
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.75rem;
+  }
+
+  /* Уменьшаем размер основного заголовка */
+  h1 {
+    font-size: 1.8rem; /* Адаптивный размер для смартфона */
+    line-height: 1.25;
+    margin-bottom: 1.5rem;
+    word-wrap: break-word; /* Предотвращает вылет длинных слов */
+  }
+
+  /* Блок с кнопками */
+  .hero-btns {
+    display: flex;
+    flex-direction: column; /* Размещаем кнопки друг под другом */
+    gap: 12px; /* Расстояние между кнопками */
+    width: 100%;
+  }
+
+  /* Выравнивание кнопок на мобильном */
+  .btn {
+    display: block;
+    width: 100%; /* Кнопки во всю ширину для удобства нажатия */
+    text-align: center;
+    margin-right: 0; /* Убираем правый отступ от ПК-версии */
+    padding: 0.85rem 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  /* Настройка сетки проектов для мобилок */
+  .projects {
+    padding: 4rem 20px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr; /* Строго одна колонка */
+    gap: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Подвал */
+  .footer {
+    padding: 4rem 20px;
+  }
+
+  .footer h2 {
+    font-size: 1.8rem;
+  }
+
+  .socials {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .socials a {
+    margin: 0;
+  }
