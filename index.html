@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Videographer & Visual Creator | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <video class="hero-bg" autoplay muted loop playsinline poster="preview.jpg">
+      <source src="showreel_loop.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="subtitle">VISUAL STORYTELLER & DIRECTOR</p>
+      <h1>Создаю кинематографичный контент, который продает ваш бренд.</h1>
+      <div class="hero-btns">
+        <a href="#projects" class="btn primary">Смотреть работы</a>
+        <a href="https://t.me/YOUR_TELEGRAM" target="_blank" class="btn secondary">Обсудить проект</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PROJECTS -->
+  <section id="projects" class="projects">
+    <h2 class="section-title">Избранные проекты</h2>
+    
+    <div class="grid">
+      <!-- Project Item 1 -->
+      <div class="project-card">
+        <div class="video-container">
+          <video loop muted playsinline onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
+            <source src="project1.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="project-info">
+          <h3>Commercial for Brand</h3>
+          <p>Commercial / Color Grading / Sound Design</p>
+        </div>
+      </div>
+
+      <!-- Project Item 2 -->
+      <div class="project-card">
+        <div class="video-container">
+          <video loop muted playsinline onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;">
+            <source src="project2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="project-info">
+          <h3>Music Video Snippet</h3>
+          <p>Music Video / VFX / Motion Design</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA / FOOTER -->
+  <footer class="footer">
+    <h2>Есть идея? Давайте воплотим её.</h2>
+    <p>Открыт к коммерческим съёмкам, клипам и креативным проектам.</p>
+    <div class="socials">
+      <a href="https://t.me/YOUR_TELEGRAM" target="_blank">Telegram</a>
+      <a href="https://instagram.com/YOUR_INSTAGRAM" target="_blank">Instagram</a>
+      <a href="mailto:your@email.com">Email</a>
+    </div>
+  </footer>
+
+</body>
+</html>
