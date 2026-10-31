@@ -11,7 +11,7 @@ body {
   overflow-x: hidden;
 }
 
-/* HERO */
+/* HERO SECTION */
 .hero {
   position: relative;
   width: 100%;
@@ -20,25 +20,33 @@ body {
   align-items: center;
   justify-content: center;
   padding: 0 5%;
+  overflow: hidden; /* Обязательно, чтобы градиент не вылезал за рамки */
 }
 
 .hero-bg {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Кадрирует видео так, чтобы оно заполняло экран без искажения пропорций */
   z-index: 1;
 }
 
+/* Градиентный оверлей: темнее сзади текста и плавно уходит в цвет фона (#0a0a0a) книзу */
 .hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.55);
+  background: linear-gradient(
+    to bottom, 
+    rgba(10, 10, 10, 0.4) 0%, 
+    rgba(10, 10, 10, 0.6) 60%, 
+    rgba(10, 10, 10, 1) 100%
+  );
   z-index: 2;
 }
 
@@ -173,53 +181,85 @@ h1 {
    АДАПТИВ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ (до 768px)
    ========================================== */
 @media (max-width: 768px) {
-  /* Фиксируем горизонтальный скролл */
   html, body {
     overflow-x: hidden;
     width: 100%;
   }
 
-  /* Настройки Hero-секции */
   .hero {
-    padding: 0 20px; /* Добавляем безопасные отступы по бокам */
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
     justify-content: center;
+    padding: 0 20px;
+    overflow: hidden;
+  }
+
+  /* Позиционирование видео на мобилке */
+  .hero-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Растягивает видео на весь экран без черных полос */
+    z-index: 1;
+  }
+
+  /* Плавный градиент снизу в мобильной версии */
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom, 
+      rgba(10, 10, 10, 0.45) 0%, 
+      rgba(10, 10, 10, 0.65) 50%, 
+      rgba(10, 10, 10, 1) 100%
+    );
+    z-index: 2;
   }
 
   .hero-content {
+    position: relative;
+    z-index: 3;
     width: 100%;
     max-width: 100%;
     padding: 0;
+    text-align: left;
   }
 
-  /* Уменьшаем размер подзаголовка */
   .subtitle {
     font-size: 0.75rem;
     letter-spacing: 1.5px;
     margin-bottom: 0.75rem;
+    color: #b0b0b0;
   }
 
-  /* Уменьшаем размер основного заголовка */
   h1 {
-    font-size: 1.8rem; /* Адаптивный размер для смартфона */
+    font-size: 1.8rem;
     line-height: 1.25;
     margin-bottom: 1.5rem;
-    word-wrap: break-word; /* Предотвращает вылет длинных слов */
+    word-wrap: break-word;
   }
 
-  /* Блок с кнопками */
   .hero-btns {
     display: flex;
-    flex-direction: column; /* Размещаем кнопки друг под другом */
-    gap: 12px; /* Расстояние между кнопками */
+    flex-direction: column;
+    gap: 12px;
     width: 100%;
   }
 
-  /* Выравнивание кнопок на мобильном */
   .btn {
     display: block;
-    width: 100%; /* Кнопки во всю ширину для удобства нажатия */
+    width: 100%;
     text-align: center;
-    margin-right: 0; /* Убираем правый отступ от ПК-версии */
+    margin-right: 0;
     padding: 0.85rem 1.2rem;
     font-size: 0.95rem;
   }
