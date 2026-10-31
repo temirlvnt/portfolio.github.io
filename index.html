@@ -27,49 +27,36 @@
   </section>
 
   <!-- FEATURED PROJECTS -->
-  <!-- FEATURED PROJECTS -->
-<section id="projects" class="projects">
-  <h2 class="section-title">Избранные проекты</h2>
-  
-  <div class="grid">
-    <!-- Project Item 1: Music Video (anyz - zzz) -->
-    <div class="project-card" onclick="openModal('https://www.youtube.com/embed/ce62mm7EihQ?autoplay=1')">
-      <div class="video-container">
-        <!-- Превью-картинка с YouTube (высокое качество) -->
-        <img src="https://img.youtube.com/vi/ce62mm7EihQ/maxresdefault.jpg" alt="anyz - zzz" class="project-thumb">
-        <div class="play-overlay">
-          <div class="play-btn">▶</div>
+  <section id="projects" class="projects">
+    <h2 class="section-title">Избранные проекты</h2>
+    
+    <div class="grid">
+      <!-- Project Item 1: Music Video (anyz - zzz) -->
+      <div class="project-card" onclick="openModal('https://www.youtube.com/embed/ce62mm7EihQ?autoplay=1')">
+        <div class="video-container">
+          <img src="https://img.youtube.com/vi/ce62mm7EihQ/maxresdefault.jpg" alt="anyz - zzz" class="project-thumb">
+          <div class="play-overlay">
+            <div class="play-btn">▶</div>
+          </div>
+        </div>
+        <div class="project-info">
+          <h3>anyz — zzz (Official Music Video)</h3>
+          <p>Music Video / Directing / Color Grading</p>
         </div>
       </div>
-      <div class="project-info">
-        <h3>anyz — zzz (Official Music Video)</h3>
-        <p>Music Video / Directing / Color Grading</p>
-      </div>
-    </div>
 
-    <!-- Project Item 2: Commercial (Сюда можно поставить второй проект) -->
-    <div class="project-card" onclick="openModal('ТАКЖЕ_ССЫЛКА_НА_YOUTUBE_EMBED')">
-      <div class="video-container">
-        <div class="placeholder-box">Скоро новый проект</div>
-        <div class="play-overlay">
-          <div class="play-btn">▶</div>
+      <!-- Project Item 2: Commercial (Заглушка) -->
+      <div class="project-card">
+        <div class="video-container">
+          <div class="placeholder-box">Скоро новый проект</div>
+        </div>
+        <div class="project-info">
+          <h3>Commercial for Brand</h3>
+          <p>Commercial / Sound Design</p>
         </div>
       </div>
-      <div class="project-info">
-        <h3>Commercial for Brand</h3>
-        <p>Commercial / Sound Design</p>
-      </div>
     </div>
-  </div>
-</section>
-
-<!-- МОДАЛЬНОЕ ОКНО ДЛЯ ПРОСМОТРА ВИДЕО -->
-<div id="videoModal" class="modal" onclick="closeModal()">
-  <div class="modal-content" onclick="event.stopPropagation()">
-    <span class="close-btn" onclick="closeModal()">&times;</span>
-    <iframe id="youtubePlayer" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  </div>
-</div>
+  </section>
 
   <!-- CTA / FOOTER -->
   <footer class="footer">
@@ -82,23 +69,32 @@
     </div>
   </footer>
 
-<script>
-  function openModal(url) {
-    const modal = document.getElementById('videoModal');
-    const player = document.getElementById('youtubePlayer');
-    player.src = url;
-    modal.style.display = 'flex';
-    document.body.style.overflow = 'hidden'; // Блокируем скролл сайта под модалкой
-  }
+  <!-- МОДАЛЬНОЕ ОКНО ДЛЯ ПРОСМОТРА ВИДЕО (Вынесено вниз страницы) -->
+  <div id="videoModal" class="modal" onclick="closeModal()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <iframe id="youtubePlayer" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
 
-  function closeModal() {
-    const modal = document.getElementById('videoModal');
-    const player = document.getElementById('youtubePlayer');
-    player.src = ''; // Останавливаем воспроизведение при закрытии
-    modal.style.display = 'none';
-    document.body.style.overflow = 'auto'; // Возвращаем скролл
-  }
-</script>
+  <script>
+    function openModal(url) {
+      if (!url) return;
+      const modal = document.getElementById('videoModal');
+      const player = document.getElementById('youtubePlayer');
+      player.src = url;
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('videoModal');
+      const player = document.getElementById('youtubePlayer');
+      player.src = '';
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+  </script>
   
 </body>
 </html>
